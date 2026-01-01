@@ -1,0 +1,164 @@
+---
+title: "ዘማሪ / ዲያቆን / በጎ ፈቃደኛ መመዝገብ"
+layout: "layouts/base.njk"
+permalink: "am/forms/choir-deacon/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>ዘማሪ / ዲያቆን / በጎ ፈቃደኛ መመዝገብ</h1>
+    <h2>የኮየር / ዲያቆን / በጎ ፈቃደኛ መመዝገብ</h2>
+
+    <section class="form-card">
+      <h3>ወደ አገልግሎት ቡድን ይቀላቀሉ</h3>
+      <p class="subtext">በአገልግሎት ቡድን ይቀላቀሉ።</p>
+
+      <form class="styled-form" method="post" action="/api/registration/choir-volunteer">
+
+        <!-- Name -->
+        <label for="cv-first-name">ስም * <span class="am">(ስም)</span></label>
+        <input id="cv-first-name" name="first_name" type="text" required>
+
+        <label for="cv-last-name">የአባት ስም * <span class="am">(የአባት ስም)</span></label>
+        <input id="cv-last-name" name="last_name" type="text" required>
+
+        <!-- Contact -->
+        <div class="two-col">
+          <div>
+            <label for="cv-email">ኢሜይል * <span class="am">(ኢሜይል)</span></label>
+            <input id="cv-email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="cv-phone">ስልክ <span class="am">(ስልክ)</span></label>
+            <input id="cv-phone" name="phone" type="tel" placeholder="+32…">
+          </div>
+        </div>
+
+        <!-- Address -->
+        <label for="cv-address1">አድራሻ</label>
+        <input id="cv-address1" name="address1" type="text" placeholder="አድራሻ 1">
+        <input name="address2" type="text" placeholder="አድራሻ 2">
+
+        <div class="three-col">
+          <input name="city" type="text" placeholder="ከተማ">
+          <input name="state" type="text" placeholder="ክልል / ክፍለ ሀገር">
+          <input name="postal_code" type="text" placeholder="ፖስታ ኮድ">
+        </div>
+
+        <input name="country" type="text" placeholder="አገር" value="Belgium">
+
+        <!-- Role selection -->
+        <label for="cv-role">የሚመዘገቡት ክፍል * <span class="am">(ክፍል)</span></label>
+        <select id="cv-role" name="role" required>
+          <option value="">ይምረጡ…</option>
+          <option value="choir">ኮየር</option>
+          <option value="deacon">ዲያቆን</option>
+          <option value="volunteer">በጎ ፈቃደኛ</option>
+        </select>
+
+        <!-- Choir specifics -->
+        <div class="two-col">
+          <div>
+            <label for="cv-voice">የድምፅ ክፍል (ኮየር)</label>
+            <select id="cv-voice" name="choir_voice">
+              <option value="">N/A</option>
+              <option value="soprano">ሶፕራኖ</option>
+              <option value="alto">አልቶ</option>
+              <option value="tenor">ቴነር</option>
+              <option value="bass">ቤስ</option>
+            </select>
+          </div>
+          <div>
+            <label for="cv-experience">ተሞክሮ (ዓመታት)</label>
+            <input id="cv-experience" name="experience_years" type="number" min="0" step="1" placeholder="0">
+          </div>
+        </div>
+
+        <!-- Volunteer areas -->
+        <label>የበጎ ፈቃደኝነት አገልግሎቶች (የሚመረጡ)</label>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="volunteer_areas" value="ushering"> መምሪያ / መምራት</label>
+          <label><input type="checkbox" name="volunteer_areas" value="hospitality"> እንቅስቃሴ / መቀበያ</label>
+          <label><input type="checkbox" name="volunteer_areas" value="cleaning"> ንፁህነት</label>
+          <label><input type="checkbox" name="volunteer_areas" value="media"> ሚዲያ / ስትሪሚንግ</label>
+          <label><input type="checkbox" name="volunteer_areas" value="sunday-school"> ሰንበት ት/ቤት መርዳት</label>
+          <label><input type="checkbox" name="volunteer_areas" value="youth"> ወጣቶች አገልግሎት</label>
+        </div>
+
+        <!-- Availability -->
+        <label for="cv-availability">የሚገኙበት ጊዜ</label>
+        <textarea id="cv-availability" name="availability" rows="3" placeholder="የሚገኙበት ቀን/ሰዓት…"></textarea>
+
+        <!-- Emergency Contact -->
+        <div class="two-col">
+          <div>
+            <label for="cv-emerg-name">የአስቸኳይ ግንኙነት</label>
+            <input id="cv-emerg-name" name="emergency_name" type="text" placeholder="ስም">
+          </div>
+          <div>
+            <label for="cv-emerg-phone">የአስቸኳይ ስልክ</label>
+            <input id="cv-emerg-phone" name="emergency_phone" type="tel" placeholder="+32…">
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <div class="consent">
+          <label>
+            <input type="checkbox" name="privacy_consent" required>
+            የቤተክርስቲያን የግል መረጃ ፖሊሲን እና የመረጃ አስተዳደርን እስማማለሁ። <span class="am">(የግል መረጃ አስተዳደር)</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">ምዝገባውን ያቅርቡ</button>
+        </div>
+
+      </form>
+    </section>
+
+    <div class="footer-spacer" aria-hidden="true"></div>
+  </div>
+</div>
+
+
+<style>
+  /* Wrapper */
+  .service-wrapper { display:flex; justify-content:center; padding:2rem 1rem; background:#f5eee6; }
+  .service-content { width:100%; max-width:980px; background:#f5eee6; padding:1rem 0 4rem; }
+  .service-content h1, .service-content h2 { color:#3a2a14; margin:0.5rem 0 1rem; text-align:center; }
+
+  /* Card */
+  .form-card { background:#fff; border:1px solid rgba(122,74,46,0.35); border-radius:12px; padding:1.5rem;
+               box-shadow:0 6px 18px rgba(122,74,46,0.18); margin-top:1.4rem; }
+  .form-card h3 { color:#3a2a14; margin:0 0 0.4rem; }
+  .subtext { color:#6b5647; margin:0 0 0.8rem; }
+
+  /* Form styling */
+  .styled-form label { display:block; margin-top:1rem; font-weight:600; color:#3a2a14; }
+  .styled-form input, .styled-form textarea, .styled-form select {
+    width:100%; color:#3a2a14; background:#fff; border:1px solid rgba(122,74,46,0.35);
+    border-radius:10px; padding:0.7rem 0.9rem; font-size:1rem; margin-top:0.4rem; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .styled-form input:focus, .styled-form textarea:focus, .styled-form select:focus {
+    border-color:#c9a24d; box-shadow:0 0 0 3px rgba(201,162,77,0.25);
+  }
+  .styled-form textarea { resize:vertical; min-height:120px; }
+
+  .two-col, .three-col { display:grid; gap:1rem; }
+  .two-col { grid-template-columns:1fr 1fr; }
+  .three-col { grid-template-columns:1fr 1fr 1fr; }
+
+  .checkbox-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:0.5rem 1rem; margin-top:0.5rem; }
+  .checkbox-grid label { font-weight:500; color:#3a2a14; }
+
+  .form-actions { display:flex; gap:0.8rem; margin-top:1rem; }
+  .btn-primary { background:#7a4a2e; color:#fff; border:2px solid #7a4a2e; padding:0.65rem 1.1rem; border-radius:10px; font-weight:600; cursor:pointer; }
+  .btn-primary:hover { background:#5e3822; border-color:#c9a24d; }
+
+  .footer-spacer { height:2rem; }
+
+  @media (max-width:540px){ .two-col, .three-col { grid-template-columns:1fr; } }
+</style>

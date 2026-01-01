@@ -1,0 +1,196 @@
+---
+title: "Forms"
+lang: en
+layout: "layouts/base.njk"
+permalink: "en/forms/index.html"
+---
+
+<div class="donations-page container">
+  <h1>FORMS</h1>
+
+  <p class="bible-verse">
+    “Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion,
+    for God loves a cheerful giver.”<br>
+    <strong>— 2 Corinthians 9:7</strong>
+  </p>
+
+  <!-- GRID OF FORM OPTIONS -->
+  <div class="donation-grid">
+
+    <!-- Choir / Deacon Signup -->
+    <a href="/en/forms/choir-deacon/" class="donation-card">
+      <div class="icon">💒</div>
+      <h3>Choir / Deacon Signup</h3>
+      <p>ዘማሪ / ዲያቆን መመዝገብ</p>
+    </a>
+
+    <!-- Feedback -->
+    <a href="/en/forms/feedback/" class="donation-card">
+      <div class="icon">💬</div>
+      <h3>Feedback</h3>
+      <p>አስተያየት</p>
+    </a>
+
+    <!-- Baptism Registration -->
+    <a href="/en/forms/baptism/" class="donation-card">
+      <div class="icon">👶</div>
+      <h3>Baptism Registration</h3>
+      <p>ጥምቀት</p>
+    </a>
+
+    <!-- Marriage -->
+    <a href="/en/forms/marriage/" class="donation-card">
+      <div class="icon">💍</div>
+      <h3>Marriage</h3>
+      <p>ጋብቻ</p>
+    </a>
+
+    <!-- Full Memorial -->
+    <a href="/en/forms/full-memorial/" class="donation-card">
+      <div class="icon">🕯️</div>
+      <h3>Full Memorial</h3>
+      <p>ሙሉ ፍትሃት</p>
+    </a>
+
+    <!-- Simple Memorial -->
+    <a href="/en/forms/simple-memorial/" class="donation-card">
+      <div class="icon">🌿</div>
+      <h3>Simple Memorial</h3>
+      <p>ስም ማስጠራት</p>
+    </a>
+
+    <!-- Membership Registration -->
+    <a href="/en/forms/membership-registration/" class="donation-card">
+      <div class="icon">🧾</div>
+      <h3>Membership Registration</h3>
+      <p>የአባልነት መመዝገብ</p>
+    </a>
+
+    <!-- Sunday School Registration -->
+    <a href="/en/forms/sunday-school/" class="donation-card">
+      <div class="icon">🧾</div>
+      <h3>Sunday School Registration</h3>
+      <p>ሰንበት ት/ቤት መመዝገብ</p>
+    </a>
+
+  </div>
+
+  <div class="footer-spacer" aria-hidden="true"></div>
+</div>
+
+
+<style>
+  /* Page container */
+  .forms-page,
+  .donations-page {              /* legacy alias, safe to keep during transition */
+    text-align: center;
+    padding: 2rem 0 5rem;
+  }
+
+  .bible-verse {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+
+  /* GRID LAYOUT */
+  .forms-grid,
+  .donation-grid {               /* legacy alias */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+  }
+
+  /* CARD STYLE */
+  .forms-card,
+  .forms-grid a,
+  .donation-card,                /* legacy alias */
+  .donation-grid a {             /* legacy alias for anchors inside old grid */
+    background: #3a2f2f;
+    color: #fff;                 /* enforce white text for visibility */
+    border-radius: 12px;
+    padding: 1.8rem 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.25s ease;
+    position: relative;
+  }
+
+  /* ICON */
+  .forms-card .icon,
+  .forms-grid a .icon,
+  .donation-card .icon {         /* legacy alias */
+    font-size: 2.6rem;
+    margin-bottom: 0.8rem;
+    color: #fff;                 /* make emoji/icon area consistent on dark bg */
+  }
+
+  /* TITLES & TEXT inside thumbnails — force white */
+  .forms-card h3,
+  .forms-card p,
+  .forms-grid a h3,
+  .forms-grid a p,
+  .donation-card h3,             /* legacy alias */
+  .donation-card p {             /* legacy alias */
+    color: #fff;                 /* white text for contrast */
+  }
+
+  .forms-card h3,
+  .forms-grid a h3,
+  .donation-card h3 {
+    margin: 0.4rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .forms-card p,
+  .forms-grid a p,
+  .donation-card p {
+    font-size: 0.95rem;
+    opacity: 0.95;               /* slightly stronger than 0.92 for readability */
+  }
+
+  /* HOVER EFFECT */
+  .forms-card:hover,
+  .forms-grid a:hover,
+  .donation-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
+
+  .forms-card:hover::after,
+  .forms-grid a:hover::after,
+  .donation-card:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+    pointer-events: none;
+  }
+
+  /* Spacer before footer */
+  .footer-spacer { height: 4rem; }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .forms-card,
+    .forms-grid a,
+    .donation-card {
+      padding: 1.2rem;
+    }
+    .forms-card .icon,
+    .forms-grid a .icon,
+    .donation-card .icon {
+      font-size: 2.2rem;
+    }
+  }
+</style>
+

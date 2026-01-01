@@ -1,0 +1,273 @@
+---
+title: "Sunday School Registration"
+lang: en
+layout: "layouts/base.njk"
+permalink: "en/forms/sunday-school/index.html"
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>Sunday School Registration Form</h1>
+    <h2>የሰንበት ት/ቤት መመዝገብያ ቅፅ</h2>
+
+    <div class="price-badge">Free</div>
+
+    <p>
+      Registering for Sunday School helps us organize classes, support students, and ensure every child receives proper spiritual education.
+    </p>
+
+    <p>
+      በእሁድ ት/ቤት መመዝገብ ትምህርቶችን በትክክል ለማዘጋጀት፣ ተማሪዎችን ለመደገፍ እና ሁሉም ልጆች ትክክለኛ መንፈሳዊ ትምህርት እንዲቀበሉ ይረዳል።
+    </p>
+
+    <!-- SUNDAY SCHOOL FORM -->
+    <form class="memorial-form">
+
+      <h3>Student Information</h3>
+
+      <!-- Full Name -->
+      <label>
+        Full Name *
+        <span class="am"> (ሙሉ ስም) </span>
+      </label>
+      <div class="two-col">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+      </div>
+
+      <!-- Baptismal Name -->
+      <label>
+        Baptismal Name
+        <span class="am"> (የጥምቀት ስም) </span>
+      </label>
+      <input type="text">
+
+      <!-- Age -->
+      <label>
+        Age *
+        <span class="am"> (እድሜ) </span>
+      </label>
+      <input type="number" required>
+
+      <!-- Grade / Class -->
+      <label>
+        Grade / Class *
+        <span class="am"> (ክፍል) </span>
+      </label>
+      <input type="text" placeholder="e.g. Grade 1, Grade 2" required>
+
+      <!-- Parent/Guardian Name -->
+      <label>
+        Parent / Guardian Name *
+        <span class="am"> (የወላጅ / ተንከባካቢ ስም) </span>
+      </label>
+      <input type="text" required>
+
+      <!-- Phone -->
+      <label>
+        Parent Phone Number *
+        <span class="am"> (የወላጅ ስልክ) </span>
+      </label>
+      <input type="tel" required>
+
+      <!-- Email -->
+      <label>
+        Parent Email
+        <span class="am"> (የወላጅ ኢሜይል) </span>
+      </label>
+      <input type="email">
+
+      <!-- Address -->
+      <label>
+        Home Address *
+        <span class="am"> (የቤት አድራሻ) </span>
+      </label>
+      <input type="text" placeholder="Address 1" required>
+      <input type="text" placeholder="Address 2">
+
+      <div class="three-col">
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="State/Province" required>
+        <input type="text" placeholder="Postal Code" required>
+      </div>
+
+      <input type="text" placeholder="Country" required>
+
+      <h3>Sunday School Details</h3>
+
+      <!-- Attendance Time -->
+      <label>
+        Preferred Class Time *
+        <span class="am"> (የሚመረጥ የትምህርት ሰዓት) </span>
+      </label>
+      <select required>
+        <option value="">Select...</option>
+        <option>Morning Class</option>
+        <option>Afternoon Class</option>
+      </select>
+
+      <!-- Previous Sunday School -->
+      <label>
+        Have you attended Sunday School before?
+        <span class="am"> (ቀደም ብለው በእሁድ ት/ቤት ተማሩ?) </span>
+      </label>
+      <select>
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <!-- Open-ended Questions -->
+      <label>
+        Why do you want to join Sunday School?
+        <span class="am"> (ለምን በእሁድ ት/ቤት መቀላቀል ትፈልጋለህ/ሽ?) </span>
+      </label>
+      <textarea></textarea>
+
+      <label>
+        Any medical or special needs we should know?
+        <span class="am"> (ማንኛውም የጤና ወይም የተለየ ፍላጎት ካለ?) </span>
+      </label>
+      <textarea></textarea>
+
+      <!-- Submit -->
+      <button class="submit-btn">Submit Registration</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+/* -------------------------------------------
+   PAGE BACKGROUND (same as Contact)
+------------------------------------------- */
+body {
+  background-color: #f5eee6 !important; /* warm cream */
+}
+
+/* -------------------------------------------
+   SERVICE WRAPPER + CONTENT (centered, 800px)
+------------------------------------------- */
+.service-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.service-content {
+  width: 100%;
+  max-width: 800px;                 /* same width as Contact page */
+  background: #f5eee6;              /* outer warm background (matches page) */
+  padding: 1rem 0;                  /* small vertical padding to space the card(s) */
+  border-radius: 12px;              /* optional, subtle rounding */
+}
+
+/* -------------------------------------------
+   PRICE BADGE (warm brown)
+------------------------------------------- */
+.price-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  background: #7a4a2e;              /* warm brown */
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* -------------------------------------------
+   HEADINGS (warm dark)
+------------------------------------------- */
+.service-content h1,
+.service-content h2,
+.memorial-form h3 {
+  color: #3a2a14;                   /* warm dark brown */
+  margin: 0.5rem 0 1rem;
+}
+
+/* -------------------------------------------
+   FORM CARD (matches Contact form)
+------------------------------------------- */
+.memorial-form {
+  background: #ffffff;              /* white card */
+  border: 1px solid rgba(122, 74, 46, 0.35); /* warm brown border */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(122, 74, 46, 0.18); /* warm soft shadow */
+  margin-top: 1rem;
+}
+
+/* Labels */
+.memorial-form label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #3a2a14;                   /* warm dark brown */
+}
+
+/* Inputs + Textareas (contact-style) */
+.memorial-form input,
+.memorial-form textarea {
+  width: 100%;
+  color: #3a2a14;
+  background: #ffffff;
+  border: 1px solid rgba(122, 74, 46, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.memorial-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.memorial-form input::placeholder,
+.memorial-form textarea::placeholder {
+  color: #9c8f85;
+}
+
+.memorial-form input:focus,
+.memorial-form textarea:focus {
+  border-color: #c9a24d;            /* gold highlight */
+  box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+/* Grids */
+.two-col,
+.three-col {
+  display: grid;
+  gap: 1rem;
+}
+.two-col   { grid-template-columns: 1fr 1fr; }
+.three-col { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Submit button (warm theme) */
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #7a4a2e;             /* warm brown */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.submit-btn:hover {
+  background: #5e3822;              /* deeper brown on hover */
+  box-shadow: 0 8px 20px rgba(122, 74, 46, 0.25);
+}
+.submit-btn:active {
+  transform: translateY(1px);
+}
+</style>

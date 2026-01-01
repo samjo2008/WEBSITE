@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+title: "መስቀል የፎቶ አልበም"
+lang: am
+permalink: "am/events/gallery/index.html"
+---
+
+<section class="album-container">
+
+  <h1 class="album-page-title">መስቀል የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-meskel" src="{{ collections.meskelGallery[0] }}" alt="መስቀል ሂሮ">
+    <span class="album-prev" data-target="meskel">&#10094;</span>
+    <span class="album-next" data-target="meskel">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="meskel">
+    {% for img in collections.meskelGallery %}
+    <img 
+      src="{{ img }}" 
+      class="thumb thumb-meskel"
+      data-full="{{ img }}"
+      alt="ትንሽ ምስል">
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!--🎄 GENA ALBUM-->
+<section class="album-container">
+
+  <h1 class="album-page-title">ገና የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-gena" src="{{ collections.genaGallery[0] }}" alt="ገና ሂሮ">
+    <span class="album-prev" data-target="gena">&#10094;</span>
+    <span class="album-next" data-target="gena">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="gena">
+    {% for img in collections.genaGallery %}
+    <img src="{{ img }}" class="thumb thumb-gena" data-full="{{ img }}">
+    {% endfor %}
+  </div>
+
+</section>
+
+<!--💧 TIMKET ALBUM-->
+<section class="album-container">
+
+  <h1 class="album-page-title">ትምክት የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-timket" src="{{ collections.timketGallery[0] }}" alt="ትምክት ሂሮ">
+    <span class="album-prev" data-target="timket">&#10094;</span>
+    <span class="album-next" data-target="timket">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="timket">
+    {% for img in collections.timketGallery %}
+    <img src="{{ img }}" class="thumb thumb-timket" data-full="{{ img }}">
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!--✝️ FASIKA ALBUM -->
+<section class="album-container">
+
+  <h1 class="album-page-title">ፋሲካ የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-fasika" src="{{ collections.fasikaGallery[0] }}" alt="ፋሲካ ሂሮ">
+    <span class="album-prev" data-target="fasika">&#10094;</span>
+    <span class="album-next" data-target="fasika">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="fasika">
+    {% for img in collections.fasikaGallery %}
+    <img src="{{ img }}" class="thumb thumb-fasika" data-full="{{ img }}">
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!--✝️ KIDANEMIHRET YEKATIT-->
+<section class="album-container">
+
+  <h1 class="album-page-title">ኪዳነምህረት የየካቲት የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-kidanemihretYekatit" src="{{ collections.kidanemihretYekatitGallery[0] }}" alt="ኪዳነምህረት የየካቲት ሂሮ">
+    <span class="album-prev" data-target="kidanemihretYekatit">&#10094;</span>
+    <span class="album-next" data-target="kidanemihretYekatit">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="kidanemihretYekatit">
+    {% for img in collections.kidanemihretYekatitGallery %}
+    <img src="{{ img }}" class="thumb thumb-kidanemihretYekatit" data-full="{{ img }}">
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!--✝️ KIDANEMIHRET NEHASE-->
+<section class="album-container">
+
+  <h1 class="album-page-title">ኪዳነምህረት የነሐሴ የፎቶ አልበም</h1>
+
+  <div class="album-hero">
+    <img id="heroImage-kidanemihretNehase" src="{{ collections.kidanemihretNehaseGallery[0] }}" alt="ኪዳነምህረት የነሐሴ ሂሮ">
+    <span class="album-prev" data-target="kidanemihretNehase">&#10094;</span>
+    <span class="album-next" data-target="kidanemihretNehase">&#10095;</span>
+  </div>
+
+  <div class="album-thumbnails" data-target="kidanemihretNehase">
+    {% for img in collections.kidanemihretNehaseGallery %}
+    <img src="{{ img }}" class="thumb thumb-kidanemihretNehase" data-full="{{ img }}">
+    {% endfor %}
+  </div>
+
+</section>

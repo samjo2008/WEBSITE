@@ -1,0 +1,181 @@
+{% set currentLang = lang or page.lang or site.defaultLang or 'en' %}
+
+<header class="nav" role="banner">
+  {# Left logo #}
+  <a href="{{ '/' ~ currentLang ~ '/' }}" class="logo" aria-label="Church Home">
+    <img
+      src="/assets/images/Cross01.png"
+      alt="Church Logo"
+      class="logo-img"
+      width="48"
+      height="48"
+      loading="eager"
+      decoding="async"
+    />
+  </a>
+
+  {# ---------- DESKTOP NAV (VISIBLE ON DESKTOP) ---------- #}
+  <nav class="main-nav" aria-label="Main Navigation" role="navigation">
+    <ul class="nav-list">
+
+      {# ABOUT / HOME with submenu #}
+      <li class="nav-item has-submenu">
+        <a href="{{ '/' ~ currentLang ~ '/about/' }}"
+           class="nav-link"
+           aria-haspopup="true"
+           aria-expanded="false">
+          {{ 'HOME' if currentLang == 'en' else 'ስለ እኛ' }}
+        </a>
+        {% if aboutMenu and aboutMenu[currentLang] and aboutMenu[currentLang].length %}
+          <ul class="submenu" role="menu" aria-label="{{ 'About submenu' if currentLang == 'en' else 'የ ስለ እኛ ሰሌዳ' }}">
+            {% for item in aboutMenu[currentLang] %}
+              <li role="none">
+                <a role="menuitem" href="{{ '/' ~ currentLang ~ '/about/' ~ item.slug ~ '/' }}">{{ item.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+
+      {# MINISTRIES with submenu #}
+      <li class="nav-item has-submenu">
+        <a href="{{ '/' ~ currentLang ~ '/ministries/' }}"
+           class="nav-link"
+           aria-haspopup="true"
+           aria-expanded="false">
+          {{ 'MINISTRIES' if currentLang == 'en' else 'አገልግሎቶች' }}
+        </a>
+        {% if MinistriesMenu and MinistriesMenu[currentLang] and MinistriesMenu[currentLang].length %}
+          <ul class="submenu" role="menu" aria-label="{{ 'Ministries submenu' if currentLang == 'en' else 'የ አገልግሎቶች ሰሌዳ' }}">
+            {% for sub in MinistriesMenu[currentLang] %}
+              <li role="none">
+                <a role="menuitem" href="{{ '/' ~ currentLang ~ '/ministries/' ~ sub.slug ~ '/' }}">{{ sub.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+
+      {# FORMS (simple link) #}
+      <li class="nav-item">
+        <a href="{{ '/' ~ currentLang ~ '/forms/' }}" class="nav-link">
+          {{ 'FORMS' if currentLang == 'en' else 'ቅጾች' }}
+        </a>
+      </li>
+
+      {# EVENTS with submenu #}
+      <li class="nav-item has-submenu">
+        <a href="{{ '/' ~ currentLang ~ '/events/' }}"
+           class="nav-link"
+           aria-haspopup="true"
+           aria-expanded="false">
+          {{ 'EVENTS' if currentLang == 'en' else 'ክስተቶች' }}
+        </a>
+        {% if eventsMenu and eventsMenu[currentLang] and eventsMenu[currentLang].length %}
+          <ul class="submenu" role="menu" aria-label="{{ 'Events submenu' if currentLang == 'en' else 'የ ክስተቶች ሰሌዳ' }}">
+            {% for item in eventsMenu[currentLang] %}
+              <li role="none">
+                <a role="menuitem" href="{{ '/' ~ currentLang ~ '/events/' ~ item.slug ~ '/' }}">{{ item.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+
+      {# CONTACT (simple link) #}
+      <li class="nav-item">
+        <a href="{{ '/' ~ currentLang ~ '/contact/' }}" class="nav-link">
+          {{ 'CONTACT' if currentLang == 'en' else 'ያግኙን' }}
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  {# ---------- MOBILE BUTTON + PANEL (VISIBLE ONLY ON MOBILE VIA CSS) ---------- #}
+  <button class="mobile-menu-btn" aria-controls="mobileMenu" aria-expanded="false">
+    <span class="mm-label">{{ 'Menu' if currentLang == 'en' else 'ሜኑ' }}</span>
+    <span class="mm-icon" aria-hidden="true"></span>
+  </button>
+
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="{{ 'Mobile Menu' if currentLang == 'en' else 'ሞባይል ሜኑ' }}" aria-modal="true">
+    <ul class="mobile-menu-list" role="menu">
+
+      {# ABOUT / HOME (accordion) #}
+      <li class="mm-item">
+        <button class="mm-accordion" aria-expanded="false">
+          {{ 'Home' if currentLang == 'en' else 'ስለ እኛ' }}
+          <span class="chev"></span>
+        </button>
+        <ul class="mm-sub" role="menu">
+          <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/about/' }}">{{ 'Overview' if currentLang == 'en' else 'አጠቃላይ' }}</a></li>
+          {% if aboutMenu and aboutMenu[currentLang] %}
+            {% for item in aboutMenu[currentLang] %}
+              <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/about/' ~ item.slug ~ '/' }}">{{ item.label }}</a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </li>
+
+      {# MINISTRIES (accordion) #}
+      <li class="mm-item">
+        <button class="mm-accordion" aria-expanded="false">
+          {{ 'Ministries' if currentLang == 'en' else 'አገልግሎቶች' }}
+          <span class="chev"></span>
+        </button>
+        <ul class="mm-sub" role="menu">
+          <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/ministries/' }}">{{ 'All Ministries' if currentLang == 'en' else 'ሁሉም አገልግሎቶች' }}</a></li>
+          {% if MinistriesMenu and MinistriesMenu[currentLang] %}
+            {% for sub in MinistriesMenu[currentLang] %}
+              <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/ministries/' ~ sub.slug ~ '/' }}">{{ sub.label }}</a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </li>
+
+      {# EVENTS (accordion) #}
+      <li class="mm-item">
+        <button class="mm-accordion" aria-expanded="false">
+          {{ 'Events' if currentLang == 'en' else 'ክስተቶች' }}
+          <span class="chev"></span>
+        </button>
+        <ul class="mm-sub" role="menu">
+          <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/events/' }}">{{ 'All Events' if currentLang == 'en' else 'ሁሉም ክስተቶች' }}</a></li>
+          {% if eventsMenu and eventsMenu[currentLang] %}
+            {% for item in eventsMenu[currentLang] %}
+              <li><a class="mm-link" href="{{ '/' ~ currentLang ~ '/events/' ~ item.slug ~ '/' }}">{{ item.label }}</a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </li>
+
+      {# Simple links #}
+      <li class="mm-item"><a class="mm-link" href="{{ '/' ~ currentLang ~ '/forms/' }}">{{ 'Forms' if currentLang == 'en' else 'ቅጾች' }}</a></li>
+      <li class="mm-item"><a class="mm-link" href="{{ '/' ~ currentLang ~ '/contact/' }}">{{ 'Contact' if currentLang == 'en' else 'ያግኙን' }}</a></li>
+
+      {# Language switcher inside mobile #}
+      {% set cleanUrl = page.url | replace('/en/', '/') | replace('/am/', '/') %}
+      <li class="mm-item mm-lang">
+        <a href="/en{{ cleanUrl }}">EN</a> | <a href="/am{{ cleanUrl }}">አማ</a>
+      </li>
+    </ul>
+  </div>
+
+  {# Right logo #}
+  <a href="{{ '/' ~ currentLang ~ '/' }}" class="logo-right" aria-label="Church Home">
+    <img
+      src="/assets/images/Cross01.png"
+      alt="Church Logo Right"
+      class="logo-img"
+      width="48"
+      height="48"
+    />
+  </a>
+
+  {# ---------- Language switcher (desktop) ---------- #}
+  {% set cleanUrl = page.url | replace('/en/', '/') | replace('/am/', '/') %}
+  <div class="lang">
+    <a href="/en{{ cleanUrl }}">EN</a> |
+    <a href="/am{{ cleanUrl }}">አማ</a>
+  </div>
+</header>

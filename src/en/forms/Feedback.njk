@@ -1,0 +1,110 @@
+---
+title: "Feedback / Suggestions / Complaints"
+lang: en
+layout: "layouts/base.njk"
+permalink: "en/forms/feedback/index.html"
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>Feedback / Suggestions / Complaints</h1>
+    <h2>አስተያየት / ምክር / ቅሬታ</h2>
+
+    <section class="form-card">
+      <h3>Share Your Thoughts</h3>
+      <p class="subtext">Speak to the pastoral team. ከመንፈሳዊ አስተዳዳሪ ጋር ይነጋገሩ።</p>
+
+      <form class="styled-form" method="post" action="/api/feedback">
+        <div class="two-col">
+          <div>
+            <label for="fb-name">Your Name</label>
+            <input id="fb-name" name="name" type="text" placeholder="Optional">
+          </div>
+          <div>
+            <label for="fb-email">Email</label>
+            <input id="fb-email" name="email" type="email" placeholder="Optional">
+          </div>
+        </div>
+
+        <label for="fb-category">Category *</label>
+        <select id="fb-category" name="category" required>
+          <option value="">Select…</option>
+          <option value="feedback">General Feedback</option>
+          <option value="suggestion">Suggestion</option>
+          <option value="complaint">Complaint</option>
+          <option value="prayer">Prayer Request</option>
+          <option value="pastoral-care">Pastoral Care</option>
+        </select>
+
+        <label for="fb-subject">Subject *</label>
+        <input id="fb-subject" name="subject" type="text" required>
+
+        <label for="fb-message">Message *</label>
+        <textarea id="fb-message" name="message" rows="5" required></textarea>
+
+        <div class="two-col">
+          <div>
+            <label for="fb-contact-pref">Preferred Contact</label>
+            <select id="fb-contact-pref" name="contact_preference">
+              <option value="">No follow-up</option>
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+            </select>
+          </div>
+          <div>
+            <label for="fb-rating">Experience Rating</label>
+            <select id="fb-rating" name="rating">
+              <option value="">N/A</option>
+              <option value="5">Excellent</option>
+              <option value="4">Good</option>
+              <option value="3">Average</option>
+              <option value="2">Poor</option>
+              <option value="1">Very Poor</option>
+            </select>
+          </div>
+        </div>
+
+        <label><input type="checkbox" name="follow_up_ok"> I’m happy to be contacted about this submission.</label>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="footer-spacer" aria-hidden="true"></div>
+  </div>
+</div>
+
+<style>
+  .service-wrapper { display:flex; justify-content:center; padding:2rem 1rem; background:#f5eee6; }
+  .service-content { width:100%; max-width:980px; background:#f5eee6; padding:1rem 0 4rem; }
+  .service-content h1, .service-content h2 { color:#3a2a14; margin:0.5rem 0 1rem; text-align:center; }
+
+  .form-card { background:#fff; border:1px solid rgba(122,74,46,0.35); border-radius:12px; padding:1.5rem;
+               box-shadow:0 6px 18px rgba(122,74,46,0.18); margin-top:1.4rem; }
+  .form-card h3 { color:#3a2a14; margin:0 0 0.4rem; }
+  .subtext { color:#6b5647; margin:0 0 0.8rem; }
+
+  .styled-form label { display:block; margin-top:1rem; font-weight:600; color:#3a2a14; }
+  .styled-form input, .styled-form textarea, .styled-form select {
+    width:100%; color:#3a2a14; background:#fff; border:1px solid rgba(122,74,46,0.35);
+    border-radius:10px; padding:0.7rem 0.9rem; font-size:1rem; margin-top:0.4rem; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .styled-form input:focus, .styled-form textarea:focus, .styled-form select:focus {
+    border-color:#c9a24d; box-shadow:0 0 0 3px rgba(201,162,77,0.25);
+  }
+  .styled-form textarea { resize:vertical; min-height:140px; }
+
+  .two-col { display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
+
+  .form-actions { display:flex; gap:0.8rem; margin-top:1rem; }
+  .btn-primary { background:#7a4a2e; color:#fff; border:2px solid #7a4a2e; padding:0.65rem 1.1rem; border-radius:10px; font-weight:600; cursor:pointer; }
+  .btn-primary:hover { background:#5e3822; border-color:#c9a24d; }
+
+  .footer-spacer { height:2rem; }
+
+  @media (max-width:540px){ .two-col { grid-template-columns:1fr; } }
+</style>

@@ -1,0 +1,242 @@
+---
+title: "የሙሉ ፍትሐት አገልግሎት"
+layout: "layouts/base.njk"
+permalink: "am/forms/full-memorial/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>የሙሉ ፍትሐት አገልግሎት</h1>
+    <h2>የሙሉ ፍትሐት አገልግሎት</h2>
+
+    <div class="price-badge">EU$100.00</div>
+
+    <p>
+      ፍትሐት ማለት ከዚህ ዓለም በሞት ለሚለዩ ሰዎች በሕይወተ ሥጋ ሳሉ ከሠሩትና ከፈጸሙት በደል እንዲነጹ፣
+      ከማእሠረ ኃጢአት እንዲፈቱ ወደ እግዚአብሔር የሚቀርብ ጸሎት ነው። ቤተ ክርስቲያን ለሙታን ጸሎተ ፍትሐት
+      እንዲደረግ ታዝዛለች።
+    </p>
+
+    <p>
+      ሙታንና ሕያዋን የሚገናኙት በጸሎት አማካኝነት ነው። ሕያዋን ለሙታን ይጸልያሉ፤ ሙታንም ለሕያዋን
+      ይለምናሉ። /ሄኖ. 12፤34/
+    </p>
+
+    <form class="memorial-form">
+
+      <h3>የሙሉ ፍትሐት አገልግሎት ጥያቄ</h3>
+
+      <!-- Requester Name -->
+      <label>
+        አገልግሎቱን የሚጠይቀው ሰው ስም *
+        <span class="am">(ስም)</span>
+      </label>
+
+      <div class="two-col">
+        <input type="text" placeholder="ስም" required>
+        <input type="text" placeholder="የአባት ስም" required>
+      </div>
+
+      <!-- Home Phone -->
+      <label>
+        የቤት ስልክ *
+        <span class="am">(የቤት ስልክ)</span>
+      </label>
+      <input type="tel" required>
+
+      <!-- Cell Phone -->
+      <label>
+        ሞባይል *
+        <span class="am">(ሞባይል)</span>
+      </label>
+      <input type="tel" required>
+
+      <!-- Email -->
+      <label>
+        ኢሜይል *
+        <span class="am">(ኢሜይል)</span>
+      </label>
+      <input type="email" required>
+
+      <!-- Address -->
+      <label>
+        አድራሻ *
+        <span class="am">(አድራሻ)</span>
+      </label>
+
+      <input type="text" placeholder="አድራሻ 1" required>
+      <input type="text" placeholder="አድራሻ 2">
+
+      <div class="three-col">
+        <input type="text" placeholder="ከተማ" required>
+        <input type="text" placeholder="ክልል / ክፍለ ሀገር" required>
+        <input type="text" placeholder="ፖስታ ኮድ" required>
+      </div>
+
+      <input type="text" placeholder="አገር" required>
+
+      <!-- Date of Service -->
+      <label>
+        የአገልግሎት ቀን *
+        <span class="am">(ቀን)</span>
+      </label>
+
+      <div class="three-col">
+        <input type="text" placeholder="ወር" required>
+        <input type="text" placeholder="ቀን" required>
+        <input type="text" placeholder="ዓመት" required>
+      </div>
+
+      <!-- Baptismal Name -->
+      <label>
+        የተረከበ ስም (የሞተው ሰው) *
+        <span class="am">(የተረከበ ስም)</span>
+      </label>
+      <textarea rows="3" required></textarea>
+
+      <!-- Submit -->
+      <button class="submit-btn">Payment (test)</button>
+
+    </form>
+
+  </div>
+</div>
+
+<style>
+/* -------------------------------
+   SERVICE PAGE WRAPPER
+-------------------------------- */
+.service-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #f5eee6; /* SAME BACKGROUND AS CONTACT PAGE */
+}
+
+.service-content {
+  width: 100%;
+  max-width: 800px;  /* Same content width as Contact page */
+  background: #f5eee6; /* Warm beige (outer background) */
+  padding: 1rem 0;
+}
+
+/* -------------------------------
+   FORM CARD STYLE (Matches Contact Form)
+-------------------------------- */
+.memorial-form,
+.full-form,
+.simple-form {
+  background: #ffffff; /* white card */
+  border: 1px solid rgba(122, 74, 46, 0.35); /* warm brown border */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(122, 74, 46, 0.18); /* warm soft shadow */
+  margin-top: 2rem;
+}
+
+/* Titles inside content */
+.service-content h1,
+.service-content h2,
+.memorial-form h3 {
+  color: #3a2a14; /* warm dark brown */
+  margin: 0.5rem 0 1rem;
+}
+
+/* -------------------------------
+   LABELS
+-------------------------------- */
+.memorial-form label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #3a2a14; /* warm dark brown */
+}
+
+/* -------------------------------
+   INPUTS + TEXTAREAS (MATCHES CONTACT)
+-------------------------------- */
+.memorial-form input,
+.memorial-form textarea {
+  width: 100%;
+  color: #3a2a14;
+  background: #ffffff;
+  border: 1px solid rgba(122, 74, 46, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.memorial-form input::placeholder,
+.memorial-form textarea::placeholder {
+  color: #9c8f85;
+}
+
+.memorial-form input:focus,
+.memorial-form textarea:focus {
+  border-color: #c9a24d; /* gold highlight */
+  box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+.memorial-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* -------------------------------
+   GRID LAYOUTS
+-------------------------------- */
+.two-col,
+.three-col {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-col { grid-template-columns: 1fr 1fr; }
+.three-col { grid-template-columns: 1fr 1fr 1fr; }
+
+/* -------------------------------
+   PRICE BADGE (UPGRADED)
+-------------------------------- */
+.price-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  background: #7a4a2e; /* warm brown */
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* -------------------------------
+   SUBMIT BUTTON (Warm Theme)
+-------------------------------- */
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #7a4a2e;    /* warm brown */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #5e3822; /* deeper brown */
+  box-shadow: 0 8px 20px rgba(122, 74, 46, 0.25);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+</style>

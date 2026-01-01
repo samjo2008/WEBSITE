@@ -1,0 +1,344 @@
+---
+title: "የአባልነት መመዝገብ"
+layout: "layouts/base.njk"
+permalink: "am/forms/membership-registration/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>የአባልነት መመዝገብ</h1>
+    <h2>የአባልነት መመዝገብያ</h2>
+
+    <div class="price-badge">EU$10.00</div>
+
+    <p>
+      በቤተ ክርስቲያን አባል መሆን በመንፈሳዊ፣ በማህበራዊ እና በማኅበረሰብ አገልግሎቶች ሙሉ ተሳትፎ እንዲኖርዎት ይረዳዎታል።
+      አባልነት ከቤተ ክርስቲያን ጋር ያለዎትን ግንኙነት ያጠናክራል እና ሁሉንም መንፈሳዊ አገልግሎቶች እንዲቀበሉ ያደርጋል።
+    </p>
+
+    <form class="memorial-form">
+
+      <h3>የአባልነት መመዝገብ ቅጽ</h3>
+
+      <!-- Name -->
+      <label>
+        ሙሉ ስም *
+        <span class="am">(ሙሉ ስም)</span>
+      </label>
+      <div class="two-col">
+        <input type="text" placeholder="ስም" required>
+        <input type="text" placeholder="የአባት ስም" required>
+      </div>
+
+      <!-- Phone -->
+      <label>
+        ስልክ *
+        <span class="am">(ስልክ)</span>
+      </label>
+      <input type="tel" required>
+
+      <!-- Email -->
+      <label>
+        ኢሜይል *
+        <span class="am">(ኢሜይል)</span>
+      </label>
+      <input type="email" required>
+
+      <!-- Address -->
+      <label>
+        የቤት አድራሻ *
+        <span class="am">(አድራሻ)</span>
+      </label>
+
+      <input type="text" placeholder="አድራሻ 1" required>
+      <input type="text" placeholder="አድራሻ 2">
+
+      <div class="three-col">
+        <input type="text" placeholder="ከተማ" required>
+        <input type="text" placeholder="ክልል / ክፍለ ሀገር" required>
+        <input type="text" placeholder="ፖስታ ኮድ" required>
+      </div>
+
+      <input type="text" placeholder="አገር" required>
+
+      <!-- Baptismal Name -->
+      <label>
+        የጥምቀት ስም (ካለ)
+        <span class="am">(የጥምቀት ስም)</span>
+      </label>
+      <input type="text">
+
+      <h3>በቤተ ክርስቲያን ውስጥ የሚያገለግሉበት ክፍል</h3>
+
+      <div class="choice-group">
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="teaching">
+          <div class="choice-text">
+            <span class="en">Teaching department</span>
+            <span class="am">ትምህርት ክፍል</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="singing">
+          <div class="choice-text">
+            <span class="en">Singing department</span>
+            <span class="am">የመዝሙር ክፍል</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="hospitality">
+          <div class="choice-text">
+            <span class="en">Hospitality department (during annual and monthly Masses)</span>
+            <span class="am">እንኳንደምታ / መስቀል ክፍል (በአመታዊ እና በወርሃዊ ቅዳሴ)</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="transport">
+          <div class="choice-text">
+            <span class="en">Providing transportation services for the fathers</span>
+            <span class="am">ለአባቶች የመጓጓዣ አገልግሎት መስጠት</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="income">
+          <div class="choice-text">
+            <span class="en">Collecting income for the church</span>
+            <span class="am">ለቤተክርስቲያን ገቢ ማሰባሰብ / ማብራሪያ</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="meal">
+          <div class="choice-text">
+            <span class="en">Preparing meals (paying for a meal after Mass)</span>
+            <span class="am">ምግብ አዘጋጅ መስጠት ወይም የምግብ ወጪ መስጠት (ቅዳሴ በኋላ)</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="spiritual_meetings">
+          <div class="choice-text">
+            <span class="en">Preparing spiritual meetings</span>
+            <span class="am">መንፈሳዊ ስብሰባዎችን ማዘጋጀት</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="priesthood">
+          <div class="choice-text">
+            <span class="en">If you have deacon or priesthood authority, serving in that ministry</span>
+            <span class="am">ዲያቆን ወይም ሌላ ቅዱሳን ሥልጣን ካለዎት በኅብረት አገልግሎት</span>
+          </div>
+        </label>
+
+        <label class="choice-option">
+          <input type="checkbox" name="service_part" value="other">
+          <div class="choice-text">
+            <span class="en">Other:</span>
+            <span class="am">ሌላ፡</span>
+          </div>
+        </label>
+
+        <input type="text" class="other-input" placeholder="ዝርዝር ይግለጹ">
+
+      </div>
+
+      <!-- Submit -->
+      <button class="submit-btn">መመዝገብ</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+/* -------------------------------------------
+   PAGE BACKGROUND (same as Contact)
+------------------------------------------- */
+body {
+  background-color: #f5eee6 !important; /* warm cream */
+}
+
+/* -------------------------------------------
+   SERVICE WRAPPER + CONTENT (centered, 800px)
+------------------------------------------- */
+.service-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.service-content {
+  width: 100%;
+  max-width: 800px;                 /* same width as Contact page */
+  background: #f5eee6;              /* outer warm background (matches page) */
+  padding: 1rem 0;                  /* small vertical padding to space the card(s) */
+  border-radius: 12px;              /* optional, subtle rounding */
+}
+
+/* -------------------------------------------
+   PRICE BADGE (warm brown)
+------------------------------------------- */
+.price-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  background: #7a4a2e;              /* warm brown */
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* -------------------------------------------
+   HEADINGS (warm dark)
+------------------------------------------- */
+.service-content h1,
+.service-content h2,
+.memorial-form h3 {
+  color: #3a2a14;                   /* warm dark brown */
+  margin: 0.5rem 0 1rem;
+}
+
+/* -------------------------------------------
+   FORM CARD (matches Contact form)
+------------------------------------------- */
+.memorial-form {
+  background: #ffffff;              /* white card */
+  border: 1px solid rgba(122, 74, 46, 0.35); /* warm brown border */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(122, 74, 46, 0.18); /* warm soft shadow */
+  margin-top: 1rem;
+}
+
+/* Labels */
+.memorial-form label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #3a2a14;                   /* warm dark brown */
+}
+
+/* Inputs + Textareas (contact-style) */
+.memorial-form input,
+.memorial-form textarea {
+  width: 100%;
+  color: #3a2a14;
+  background: #ffffff;
+  border: 1px solid rgba(122, 74, 46, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.memorial-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.memorial-form input::placeholder,
+.memorial-form textarea::placeholder {
+  color: #9c8f85;
+}
+
+.memorial-form input:focus,
+.memorial-form textarea:focus {
+  border-color: #c9a24d;            /* gold highlight */
+  box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+/* Grids */
+.two-col,
+.three-col {
+  display: grid;
+  gap: 1rem;
+}
+.two-col   { grid-template-columns: 1fr 1fr; }
+.three-col { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Submit button (warm theme) */
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #7a4a2e;             /* warm brown */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.submit-btn:hover {
+  background: #5e3822;              /* deeper brown on hover */
+  box-shadow: 0 8px 20px rgba(122, 74, 46, 0.25);
+}
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+
+/* Group wrapper */
+.choice-group {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Each row: input + text */
+.choice-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+/* Force inputs to behave like small inline controls */
+.choice-option input[type="checkbox"],
+.choice-option input[type="radio"] {
+  width: auto !important;
+  display: inline-block !important;
+  flex: 0 0 auto;
+  margin: 0.2rem 0 0 0;
+  transform: scale(1.1);
+}
+
+/* Text block */
+.choice-text {
+  font-size: 1rem;
+  color: #3a2a14;
+  line-height: 1.4;
+}
+
+/* Amharic + English stacked */
+.choice-text .am {
+  display: block;
+}
+
+.choice-text .en {
+  display: block;
+  font-size: 0.95rem;
+  color: #5a4630;
+}
+
+/* "Other" input aligned with text column */
+.other-input {
+  margin-left: 1.9rem; /* roughly the width of the checkbox + gap */
+  width: 60%;
+  margin-top: -0.2rem;
+}
+</style>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% set lang = lang or site.defaultLang or 'en' %}
+<html lang="{{ lang }}" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="index,follow">
+
+  {# ----------------------------
+     Performance: Preconnect to Google Fonts
+     ---------------------------- #}
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  {# Ethiopic font #}
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+
+  {# Main CSS #}
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  {# ----------------------------
+     SEO: canonical + hreflang
+     ---------------------------- #}
+  {% set cleanUrl = page.url | replace('/en/', '/') | replace('/am/', '/') %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" href="{{ site.url }}/en{{ cleanUrl }}" hreflang="en">
+  <link rel="alternate" href="{{ site.url }}/am{{ cleanUrl }}" hreflang="am">
+  <link rel="alternate" href="{{ site.url }}{{ cleanUrl }}" hreflang="x-default">
+
+  {# ----------------------------
+     Social: Open Graph + Twitter
+     (provide /assets/images/og-default.jpg)
+     ---------------------------- #}
+  <meta property="og:title" content="{{ title }} | {{ site.name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ site.url }}/assets/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | {{ site.name }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/og-default.jpg">
+
+  {# ----------------------------
+     JSON-LD: Organization (basic)
+     Update site.url & address if needed
+     ---------------------------- #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ethiopian Orthodox Tewahedo Saint Kidane Mihret Church",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/images/Cross01.png",
+    "sameAs": [
+      "https://wa.me/32486048956",
+      "https://www.facebook.com/profile.php?id=100077253361645",
+      "http://eotcbelgium.blogspot.be/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Petite rue de l'Eglise n°2",
+      "addressLocality": "Bruxelles",
+      "postalCode": "1150",
+      "addressCountry": "Belgium"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  {# Accessibility: Skip to content #}
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  {# Scripts (deferred) #}
+  <script src="/assets/js/mobile-menu.js" defer></script>
+  <script src="/assets/js/slider.js" defer></script>
+  <script src="/assets/js/liturgical-events.js" defer></script>
+  <script src="/assets/js/gallery.js" defer></script>
+  <script src="/assets/js/library-pager.js" defer></script>
+
+  {# Mobile submenu double‑tap (mobile only) #}
+  <script defer>
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.has-submenu > .nav-link');
+      if (!link) return;
+
+      const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+      if (isDesktop) return;
+
+      const expanded = link.getAttribute('aria-expanded') === 'true';
+
+      if (!expanded) {
+        e.preventDefault();
+        link.setAttribute('aria-expanded', 'true');
+      } else {
+        link.setAttribute('aria-expanded', 'false');
+      }
+    }, { passive: false });
+  </script>
+
+  <noscript>
+    <p style="padding:1rem; text-align:center;">
+      JavaScript is disabled; some interactive menu features may be limited.
+    </p>
+  </noscript>
+</body>
+</html>

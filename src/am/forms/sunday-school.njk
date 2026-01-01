@@ -1,0 +1,269 @@
+---
+title: "የሰንበት ት/ቤት መመዝገብ"
+layout: "layouts/base.njk"
+permalink: "am/forms/sunday-school/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>የሰንበት ት/ቤት መመዝገብያ ቅፅ</h1>
+    <h2>የሰንበት ት/ቤት መመዝገብያ ቅፅ</h2>
+
+    <div class="price-badge">ነፃ</div>
+
+    <p>
+      በእሁድ ት/ቤት መመዝገብ ትምህርቶችን በትክክል ለማዘጋጀት፣ ተማሪዎችን ለመደገፍ እና ልጆች ትክክለኛ መንፈሳዊ ትምህርት እንዲቀበሉ ይረዳል።
+    </p>
+
+    <form class="memorial-form">
+
+      <h3>የተማሪ መረጃ</h3>
+
+      <!-- Full Name -->
+      <label>
+        ሙሉ ስም *
+        <span class="am">(ሙሉ ስም)</span>
+      </label>
+      <div class="two-col">
+        <input type="text" placeholder="ስም" required>
+        <input type="text" placeholder="የአባት ስም" required>
+      </div>
+
+      <!-- Baptismal Name -->
+      <label>
+        የጥምቀት ስም
+        <span class="am">(የጥምቀት ስም)</span>
+      </label>
+      <input type="text">
+
+      <!-- Age -->
+      <label>
+        እድሜ *
+        <span class="am">(እድሜ)</span>
+      </label>
+      <input type="number" required>
+
+      <!-- Grade -->
+      <label>
+        ክፍል *
+        <span class="am">(ክፍል)</span>
+      </label>
+      <input type="text" placeholder="ምሳ. 1ኛ ክፍል, 2ኛ ክፍል" required>
+
+      <!-- Parent Name -->
+      <label>
+        የወላጅ / ተንከባካቢ ስም *
+        <span class="am">(የወላጅ ስም)</span>
+      </label>
+      <input type="text" required>
+
+      <!-- Parent Phone -->
+      <label>
+        የወላጅ ስልክ *
+        <span class="am">(የወላጅ ስልክ)</span>
+      </label>
+      <input type="tel" required>
+
+      <!-- Parent Email -->
+      <label>
+        የወላጅ ኢሜይል
+        <span class="am">(የወላጅ ኢሜይል)</span>
+      </label>
+      <input type="email">
+
+      <!-- Address -->
+      <label>
+        የቤት አድራሻ *
+        <span class="am">(አድራሻ)</span>
+      </label>
+      <input type="text" placeholder="አድራሻ 1" required>
+      <input type="text" placeholder="አድራሻ 2">
+
+      <div class="three-col">
+        <input type="text" placeholder="ከተማ" required>
+        <input type="text" placeholder="ክልል / ክፍለ ሀገር" required>
+        <input type="text" placeholder="ፖስታ ኮድ" required>
+      </div>
+
+      <input type="text" placeholder="አገር" required>
+
+      <h3>የእሁድ ት/ቤት ዝርዝር</h3>
+
+      <!-- Preferred Time -->
+      <label>
+        የሚመረጥ የትምህርት ሰዓት *
+        <span class="am">(ትምህርት ሰዓት)</span>
+      </label>
+      <select required>
+        <option value="">ይምረጡ...</option>
+        <option>ጠዋት ትምህርት</option>
+        <option>ቀትር ትምህርት</option>
+      </select>
+
+      <!-- Previous SS -->
+      <label>
+        ቀደም ብለው በእሁድ ት/ቤት ተማሩ?
+        <span class="am">(ተማሩ?)</span>
+      </label>
+      <select>
+        <option value="">ይምረጡ...</option>
+        <option>አዎ</option>
+        <option>አይ</option>
+      </select>
+
+      <!-- Why Join -->
+      <label>
+        ለምን በእሁድ ት/ቤት መቀላቀል ትፈልጋለህ/ሽ?
+        <span class="am">(ምክንያት)</span>
+      </label>
+      <textarea></textarea>
+
+      <!-- Medical Needs -->
+      <label>
+        ማንኛውም የጤና ወይም የተለየ ፍላጎት ካለ?
+        <span class="am">(የጤና መረጃ)</span>
+      </label>
+      <textarea></textarea>
+
+      <!-- Submit -->
+      <button class="submit-btn">መመዝገብ</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+/* -------------------------------------------
+   PAGE BACKGROUND (same as Contact)
+------------------------------------------- */
+body {
+  background-color: #f5eee6 !important; /* warm cream */
+}
+
+/* -------------------------------------------
+   SERVICE WRAPPER + CONTENT (centered, 800px)
+------------------------------------------- */
+.service-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.service-content {
+  width: 100%;
+  max-width: 800px;                 /* same width as Contact page */
+  background: #f5eee6;              /* outer warm background (matches page) */
+  padding: 1rem 0;                  /* small vertical padding to space the card(s) */
+  border-radius: 12px;              /* optional, subtle rounding */
+}
+
+/* -------------------------------------------
+   PRICE BADGE (warm brown)
+------------------------------------------- */
+.price-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  background: #7a4a2e;              /* warm brown */
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* -------------------------------------------
+   HEADINGS (warm dark)
+------------------------------------------- */
+.service-content h1,
+.service-content h2,
+.memorial-form h3 {
+  color: #3a2a14;                   /* warm dark brown */
+  margin: 0.5rem 0 1rem;
+}
+
+/* -------------------------------------------
+   FORM CARD (matches Contact form)
+------------------------------------------- */
+.memorial-form {
+  background: #ffffff;              /* white card */
+  border: 1px solid rgba(122, 74, 46, 0.35); /* warm brown border */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(122, 74, 46, 0.18); /* warm soft shadow */
+  margin-top: 1rem;
+}
+
+/* Labels */
+.memorial-form label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #3a2a14;                   /* warm dark brown */
+}
+
+/* Inputs + Textareas (contact-style) */
+.memorial-form input,
+.memorial-form textarea {
+  width: 100%;
+  color: #3a2a14;
+  background: #ffffff;
+  border: 1px solid rgba(122, 74, 46, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.memorial-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.memorial-form input::placeholder,
+.memorial-form textarea::placeholder {
+  color: #9c8f85;
+}
+
+.memorial-form input:focus,
+.memorial-form textarea:focus {
+  border-color: #c9a24d;            /* gold highlight */
+  box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
+}
+
+/* Grids */
+.two-col,
+.three-col {
+  display: grid;
+  gap: 1rem;
+}
+.two-col   { grid-template-columns: 1fr 1fr; }
+.three-col { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Submit button (warm theme) */
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #7a4a2e;             /* warm brown */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.submit-btn:hover {
+  background: #5e3822;              /* deeper brown on hover */
+  box-shadow: 0 8px 20px rgba(122, 74, 46, 0.25);
+}
+.submit-btn:active {
+  transform: translateY(1px);
+}
+</style>

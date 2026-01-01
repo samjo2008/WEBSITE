@@ -1,0 +1,113 @@
+---
+title: "አስተያየት / ምክር / ቅሬታ"
+layout: "layouts/base.njk"
+permalink: "am/forms/feedback/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>አስተያየት / ምክር / ቅሬታ</h1>
+    <h2>አስተያየት / ምክር / ቅሬታ</h2>
+
+    <section class="form-card">
+      <h3>አስተያየትዎን ያጋሩ</h3>
+      <p class="subtext">ከመንፈሳዊ አስተዳዳሪ ጋር ይነጋገሩ።</p>
+
+      /api/feedback
+
+        <div class="two-col">
+          <div>
+            <label for="fb-name">ስም</label>
+            <input id="fb-name" name="name" type="text" placeholder="አማራጭ">
+          </div>
+          <div>
+            <label for="fb-email">ኢሜይል</label>
+            <input id="fb-email" name="email" type="email" placeholder="አማራጭ">
+          </div>
+        </div>
+
+        <label for="fb-category">ምድብ *</label>
+        <select id="fb-category" name="category" required>
+          <option value="">ይምረጡ…</option>
+          <option value="feedback">አጠቃላይ አስተያየት</option>
+          <option value="suggestion">ምክር</option>
+          <option value="complaint">ቅሬታ</option>
+          <option value="prayer">የጸሎት ጥያቄ</option>
+          <option value="pastoral-care">መንፈሳዊ እንክብካቤ</option>
+        </select>
+
+        <label for="fb-subject">ርዕስ *</label>
+        <input id="fb-subject" name="subject" type="text" required>
+
+        <label for="fb-message">መልዕክት *</label>
+        <textarea id="fb-message" name="message" rows="5" required></textarea>
+
+        <div class="two-col">
+          <div>
+            <label for="fb-contact-pref">የመገናኘት መንገድ</label>
+            <select id="fb-contact-pref" name="contact_preference">
+              <option value="">መከታተያ የለም</option>
+              <option value="email">ኢሜይል</option>
+              <option value="phone">ስልክ</option>
+            </select>
+          </div>
+          <div>
+            <label for="fb-rating">የተሞክሮ ግምገማ</label>
+            <select id="fb-rating" name="rating">
+              <option value="">N/A</option>
+              <option value="5">በጣም ጥሩ</option>
+              <option value="4">ጥሩ</option>
+              <option value="3">መካከለኛ</option>
+              <option value="2">ደካማ</option>
+              <option value="1">በጣም ደካማ</option>
+            </select>
+          </div>
+        </div>
+
+        <label><input type="checkbox" name="follow_up_ok"> ስለዚህ ጥያቄ እንዲተከተሉኝ እፈልጋለሁ።</label>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">መላክ</button>
+        </div>
+
+      </form>
+    </section>
+
+    <div class="footer-spacer" aria-hidden="true"></div>
+  </div>
+</div>
+
+
+<style>
+  .service-wrapper { display:flex; justify-content:center; padding:2rem 1rem; background:#f5eee6; }
+  .service-content { width:100%; max-width:980px; background:#f5eee6; padding:1rem 0 4rem; }
+  .service-content h1, .service-content h2 { color:#3a2a14; margin:0.5rem 0 1rem; text-align:center; }
+
+  .form-card { background:#fff; border:1px solid rgba(122,74,46,0.35); border-radius:12px; padding:1.5rem;
+               box-shadow:0 6px 18px rgba(122,74,46,0.18); margin-top:1.4rem; }
+  .form-card h3 { color:#3a2a14; margin:0 0 0.4rem; }
+  .subtext { color:#6b5647; margin:0 0 0.8rem; }
+
+  .styled-form label { display:block; margin-top:1rem; font-weight:600; color:#3a2a14; }
+  .styled-form input, .styled-form textarea, .styled-form select {
+    width:100%; color:#3a2a14; background:#fff; border:1px solid rgba(122,74,46,0.35);
+    border-radius:10px; padding:0.7rem 0.9rem; font-size:1rem; margin-top:0.4rem; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .styled-form input:focus, .styled-form textarea:focus, .styled-form select:focus {
+    border-color:#c9a24d; box-shadow:0 0 0 3px rgba(201,162,77,0.25);
+  }
+  .styled-form textarea { resize:vertical; min-height:140px; }
+
+  .two-col { display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
+
+  .form-actions { display:flex; gap:0.8rem; margin-top:1rem; }
+  .btn-primary { background:#7a4a2e; color:#fff; border:2px solid #7a4a2e; padding:0.65rem 1.1rem; border-radius:10px; font-weight:600; cursor:pointer; }
+  .btn-primary:hover { background:#5e3822; border-color:#c9a24d; }
+
+  .footer-spacer { height:2rem; }
+
+  @media (max-width:540px){ .two-col { grid-template-columns:1fr; } }
+</style>

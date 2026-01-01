@@ -1,0 +1,155 @@
+---
+title: "የማስረጃ ጥያቄ (ጋብቻ)"
+layout: "layouts/base.njk"
+permalink: "am/forms/marriage/index.html"
+lang: am
+---
+
+<div class="service-wrapper">
+  <div class="service-content">
+
+    <h1>የማስረጃ ጥያቄ</h1>
+    <h2>የማስረጃ ጥያቄ (ጥምቀት / ጋብቻ / አባልነት)</h2>
+
+    <section class="form-card">
+      <h3>የማስረጃ ጥያቄ መላክ</h3>
+      <p class="subtext">የጥምቀት፣ የጋብቻ ወይም የአባልነት ማስረጃ ይጠይቁ።</p>
+
+      <form class="styled-form" method="post" action="/api/requests/certificates" enctype="multipart/form-data">
+
+        <!-- Requester -->
+        <div class="two-col">
+          <div>
+            <label for="cr-first-name">የጠያቂ ስም (የመጀመሪያ) *</label>
+            <input id="cr-first-name" name="first_name" type="text" required>
+          </div>
+          <div>
+            <label for="cr-last-name">የጠያቂ የአባት ስም *</label>
+            <input id="cr-last-name" name="last_name" type="text" required>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <label for="cr-email">ኢሜይል *</label>
+            <input id="cr-email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="cr-phone">ስልክ ቁጥር</label>
+            <input id="cr-phone" name="phone" type="tel" placeholder="+32…">
+          </div>
+        </div>
+
+        <!-- Certificate type -->
+        <label for="cr-type">የማስረጃ አይነት *</label>
+        <select id="cr-type" name="certificate_type" required>
+          <option value="">ይምረጡ…</option>
+          <option value="baptism">ጥምቀት</option>
+          <option value="marriage">ጋብቻ</option>
+          <option value="membership">አባልነት</option>
+        </select>
+
+        <!-- Person(s) -->
+        <label for="cr-person">በማስረጃው ላይ የሚታዩ ስሞች * <span class="am">(ስም)</span></label>
+        <input id="cr-person" name="person_names" type="text" placeholder="ሙሉ ስም(ሞች)" required>
+
+        <div class="three-col">
+          <div>
+            <label for="cr-event-date">የክስተቱ ቀን</label>
+            <input id="cr-event-date" name="event_date" type="date">
+          </div>
+          <div>
+            <label for="cr-event-place">ቦታ / ቤተክርስቲያን</label>
+            <input id="cr-event-place" name="event_place" type="text" placeholder="Church / Parish">
+          </div>
+          <div>
+            <label for="cr-book-ref">መጽሐፍ / ማጣቀሻ</label>
+            <input id="cr-book-ref" name="book_ref" type="text" placeholder="መጽሐፍ፣ ገፅ ወይም ማጣቀሻ">
+          </div>
+        </div>
+
+        <!-- Copies / Delivery -->
+        <div class="three-col">
+          <div>
+            <label for="cr-copies">ቁጥር *</label>
+            <input id="cr-copies" name="copies" type="number" min="1" step="1" value="1" required>
+          </div>
+          <div>
+            <label for="cr-delivery">የመላኪያ መንገድ *</label>
+            <select id="cr-delivery" name="delivery" required>
+              <option value="pickup">በቤተክርስቲያን መቀበል</option>
+              <option value="email">ኢሜይል (PDF)</option>
+              <option value="post">ፖስታ</option>
+            </select>
+          </div>
+          <div>
+            <label for="cr-purpose">ዓላማ</label>
+            <select id="cr-purpose" name="purpose">
+              <option value="">ይምረጡ…</option>
+              <option value="immigration">የስደት ጉዳይ</option>
+              <option value="school">ትምህርት</option>
+              <option value="record">መዝገብ / ማስታወሻ</option>
+              <option value="other">ሌላ</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="cr-mailing">የመላኪያ አድራሻ (ከፖስታ ብቻ)</label>
+        <input id="cr-mailing" name="mailing_address" type="text" placeholder="መንገድ፣ ከተማ፣ ፖስታ ኮድ፣ አገር">
+
+        <!-- Attachment -->
+        <label for="cr-attachment">ተቀማጭ ሰነድ (መታወቂያ / ማረጋገጫ)</label>
+        <input id="cr-attachment" name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <!-- Notes -->
+        <label for="cr-notes">ተጨማሪ መረጃ</label>
+        <textarea id="cr-notes" name="notes" rows="3" placeholder="ተጨማሪ መረጃ…"></textarea>
+
+        <!-- Consent -->
+        <div class="consent">
+          <label><input type="checkbox" name="privacy_consent" required> ለዚህ ጥያቄ የቀረበው መረጃ እንዲተካ እስማማለሁ።</label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">ጥያቄውን ያቅርቡ</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="footer-spacer" aria-hidden="true"></div>
+  </div>
+</div>
+
+<style>
+  .service-wrapper { display:flex; justify-content:center; padding:2rem 1rem; background:#f5eee6; }
+  .service-content { width:100%; max-width:980px; background:#f5eee6; padding:1rem 0 4rem; }
+  .service-content h1, .service-content h2 { color:#3a2a14; margin:0.5rem 0 1rem; text-align:center; }
+
+  .form-card { background:#fff; border:1px solid rgba(122,74,46,0.35); border-radius:12px; padding:1.5rem;
+               box-shadow:0 6px 18px rgba(122,74,46,0.18); margin-top:1.4rem; }
+  .form-card h3 { color:#3a2a14; margin:0 0 0.4rem; }
+  .subtext { color:#6b5647; margin:0 0 0.8rem; }
+
+  .styled-form label { display:block; margin-top:1rem; font-weight:600; color:#3a2a14; }
+  .styled-form input, .styled-form textarea, .styled-form select {
+    width:100%; color:#3a2a14; background:#fff; border:1px solid rgba(122,74,46,0.35);
+    border-radius:10px; padding:0.7rem 0.9rem; font-size:1rem; margin-top:0.4rem; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .styled-form input:focus, .styled-form textarea:focus, .styled-form select:focus {
+    border-color:#c9a24d; box-shadow:0 0 0 3px rgba(201,162,77,0.25);
+  }
+  .styled-form textarea { resize:vertical; min-height:120px; }
+
+  .two-col, .three-col { display:grid; gap:1rem; }
+  .two-col { grid-template-columns:1fr 1fr; }
+  .three-col { grid-template-columns:1fr 1fr 1fr; }
+
+  .form-actions { display:flex; gap:0.8rem; margin-top:1rem; }
+  .btn-primary { background:#7a4a2e; color:#fff; border:2px solid #7a4a2e; padding:0.65rem 1.1rem; border-radius:10px; font-weight:600; cursor:pointer; }
+  .btn-primary:hover { background:#5e3822; border-color:#c9a24d; }
+
+  .footer-spacer { height:2rem; }
+
+  @media (max-width:540px){ .two-col, .three-col { grid-template-columns:1fr; } }
+</style>

@@ -1,0 +1,53 @@
+---
+title: "አግኙን"
+layout: "layouts/base.njk"
+lang: am
+permalink: "am/contact/index.html"
+---
+
+<div class="contact-page">
+<h1>አግኙን</h1>
+<p class="form-intro">
+  ከእኛ ጋር መገናኘት ደስ ይለናል። ማንኛውንም ጥያቄ፣ የጸሎት ጥያቄ፣ ወይም መልዕክት ካለዎት እባክዎን ያግኙን።
+</p>
+
+<form class="contact-form" action="/contact" method="post">
+  <fieldset>
+    <legend>የእርስዎ መረጃ</legend>
+
+    <div class="form-row">
+      <label for="fullName">ሙሉ ስም <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" required />
+    </div>
+
+    <div class="form-row">
+      <label for="email">ኢሜይል <span class="req">*</span></label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-row">
+      <label for="phone">ስልክ (አማራጭ)</label>
+      <input type="tel" id="phone" name="phone" placeholder="+32 471 12 34 56" />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>መልዕክትዎ</legend>
+
+    <div class="form-row">
+      <label for="subject">ርዕስ <span class="req">*</span></label>
+      <input type="text" id="subject" name="subject" required />
+    </div>
+
+    <div class="form-row">
+      <label for="message">መልዕክት <span class="req">*</span></label>
+      <textarea id="message" name="message" rows="8" required></textarea>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <button type="submit" class="btn primary">መልዕክት ላክ</button>
+    <button type="reset" class="btn">ዳግም አስጀምር</button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,245 @@
+---
+title: "ሥርዓት (ቃለ አዋዲ)"
+layout: "layouts/base.njk"
+permalink: "am/about/structure-qale-awadi/index.html"
+lang: am
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qale Awadi (Ecclesiastical Constitution)</title>
+
+  <!-- Page styles -->
+  <style>
+    :root{
+      --gold:#b58a2c;
+      --gold-strong:#c19a3b;
+      --gold-accent:#c9a24d;
+      --cream:#fffdf7;
+      --paper:#ffffff;
+      --text:#2f2f2f;
+      --brown:#7a4a2e;
+      --brown-2:#a58a60;
+      --border:#e7d7a6;
+    }
+
+    body{
+      margin:0;
+      font-family:"Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      color:var(--text);
+      background:#f5eee6;   /* matches your site warm cream */
+      line-height:1.65;
+    }
+
+    /* Container */
+    .page-container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:20px 24px 40px;
+    }
+
+    /* Intro box */
+    .intro-box{
+      background:var(--paper);
+      border-radius:10px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+      padding:18px 20px 16px;
+      border-top:6px solid var(--gold-accent);
+      margin:12px 0 16px;
+    }
+    .intro-title{
+      margin:0 0 6px;
+      color:var(--brown);
+      font-weight:700;
+      font-size:1.15rem;
+      letter-spacing:.2px;
+    }
+    .intro-subtitle{
+      margin:0 0 14px;
+      color:var(--brown-2);
+      font-size:.95rem;
+      letter-spacing:.3px;
+    }
+    .intro-body p{
+      margin:.55rem 0;
+    }
+
+    /* Accordion */
+    .accordion{ display:flex; flex-direction:column; gap:.6rem; }
+
+    .acc-item{ width:100%; }
+
+    .acc-header{
+      width:100%;
+      text-align:left;
+      background:var(--gold);
+      color:#fff;
+      border:1px solid #a5822b;
+      border-radius:6px;
+      padding:.9rem 1.1rem;
+      font-weight:600;
+      letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,0.10);
+      transition:background .15s ease, box-shadow .15s ease;
+    }
+    .acc-header:hover,
+    .acc-header:focus{
+      background:var(--gold-strong);
+      box-shadow:0 6px 16px rgba(0,0,0,0.12);
+      outline:none;
+    }
+    .acc-title{ display:inline-block; }
+    .acc-icon{
+      font-size:1.1rem;
+      transition:transform .15s ease;
+    }
+    .acc-header[aria-expanded="true"] .acc-icon{ transform:rotate(180deg); }
+
+    .acc-panel{
+      background:var(--cream);
+      border:1px solid var(--border);
+      border-radius:6px;
+      padding:1rem 1.1rem;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    }
+    .acc-panel h4{ color:var(--brown); margin:.25rem 0 .5rem; }
+    .acc-panel p, .acc-panel li{ color:var(--text); }
+
+    /* Lists inside panels */
+    .acc-panel ul{ margin:.4rem 0 .8rem .9rem; }
+    .acc-panel li{ margin:.25rem 0; }
+
+    @media (max-width:768px){
+      .acc-header{ font-size:.95rem; padding:.8rem .95rem; }
+      .page-container{ padding:16px 16px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<section>
+  <div class="page-container">
+
+    <!-- INTRODUCTION -->
+    <div class="intro-box">
+      <h3 class="intro-title">ቃለ አዋዲ — Qale Awadi (የቤተክርስቲያን ህግ መጽሐፍ)</h3>
+      <p class="intro-subtitle">አራተኛ ጊዜ የተታደሰ · ሜይ 2017 (2009 ዓ.ም)</p>
+
+      <div class="intro-body">
+
+        <p><strong>በመጽሐፍ ቅዱስ መሠረት</strong>  
+          (ሌዊያውያን 27፥26–33፣ ዘዳግም 14፥22፣ ቁጥር 18፥20–29፣ ማላኪ 3፥7–12፣  
+          ሲራክ 7፥31–32፣ 32፥10–13፣ 1 ቆሮ 16፥1–5፣ ሐዋ. 4፥32–36)  
+          በእግዚአብሔር ቤት እና በአገልጋዮቹ ላይ የእርምጃ መቅረብ የምዕመናን መንፈሳዊ ግዴታ መሆኑ ተገልጿል።
+        </p>
+
+        <p>
+          <strong>ቤተክርስቲያኑም</strong> በአስተዳደር፣ በመንፈሳዊ ፍትህ፣ በአገልግሎት እና በኢኮኖሚያዊ ጉዳዮች  
+          በራሱ ሕግ እና በራሱ ስርዓት ሊመራና ሊደረግ ይገባል ተብሏል።
+        </p>
+
+        <p><strong>በእግዚአብሔር ከፍተኛ እገዛ</strong> ቅዱስ ሲኖዶስ ይህን  
+          የቃለ አዋዲ ህግ (Ecclesiastical Constitution) ይፈቅዳል።
+        </p>
+
+        <!-- BEGIN ACCORDION INTRO ITEM -->
+        <div class="acc-item">
+
+          <p><strong>በአብ፣ በወልድ በመንፈስ ቅዱስ፣ አንድ አምላክ ስም ተጀምሮ</strong></p>
+
+          <p>
+            <strong>የቤተክርስቲያን ህግ (ቃለ አዋዲ)</strong> በአራተኛ ጊዜ የተታደሰ  
+            በ2009 ዓ.ም የተፈቀደ፣ የቤተክርስቲያን አንድነትና አስተዳደር  
+            ለመበረታታት የተዘጋጀ።
+          </p>
+
+          <p>
+            <strong>እንደሚያስፈልገው</strong> ቤተክርስቲያኑ የካህናትና የምዕመናን  
+            ማኅበረ-ቅዱሳን በመባባር የአካባቢ ምኅረት ስብሰባ እንዲተቋቋም የተፈለገ  
+            በመደበኛ የመንግሥት ሕጎች መሠረት ነው።
+          </p>
+
+          <p>
+            <strong>ቤተክርስቲያኑ</strong> በታሪክና በመጽሐፍ ቅዱስ  
+            በተለይም በሐዋርያት ሥርዓት (ሐዋ. 6፥1–6) ሲመራ መጣ መሆኑ  
+            ተወዳድሮ ታውቋል።
+          </p>
+
+          <p>
+            <strong>ሀብቶችና ንብረቶች</strong> ቤተክርስቲያኑ የምዕመናን  
+            መዋጮ እና ስጦታ በመሆናቸው የመንፈሳዊ ሥራዎችን ለማካሄድ  
+            እና ለድኾችና የተጎዱ ለመርዳት የሚውሉ መሆናቸው “ሐዋ. 4፥32፣ 5፥11፣  
+            1 ቆሮ. 16፥1–11” መሠረት ተረድቷል።
+          </p>
+
+          <p>
+            <strong>የቤተክርስቲያን አስተዳደር ጉዳዮች</strong> ቢኖሩ  
+            በመንፈሳዊ ፍትህ መመርመር እንዲገባ ይታስባል።
+          </p>
+
+          <p>
+            <strong>በመጽሐፍ ቅዱስ መሠረት</strong> (ሌዊ. 27፥26–33፣  
+            ዘዳግም 14፥22፣ ቁጥር 18፥20–29፣ ማላኪ 3፥7–12፣  
+            ሲራክ 7፥31–32፣ 32፥10–13፣ 1 ቆሮ 16፥1–5፣ ሐዋ. 4፥32–36)  
+            ለእግዚአብሔር ቤት እና ለአገልጋዮቹ የግብር መቅረብ የምዕመናን መንፈሳዊ  
+            ግዴታ መሆኑ ተረድቷል።
+          </p>
+
+          <p>
+            <strong>አጠቃላይ በመሆኑ</strong> ቤተክርስቲያኑ በራሱ  
+            ህግ እና በራሱ ሥርዓት መመራት እና መንፈሳዊ ፍትህ፣  
+            አስተዳደር እና ኢኮኖሚ ስራዎች በትክክል እንዲተካ  
+            ህጎች መውጣት አስፈላጊ መሆኑ ተፈልጋል።
+          </p>
+
+          <p>
+            <strong>በእግዚአብሔር ከፍተኛ እገዛ</strong> የእግዚአብሔር  
+            ህጎች ባለቤት ሲሆን በመንፈሳዊ አይነቱ ቅዱስ ሲኖዶስ  
+            ይህን የቃለ አዋዲ ህግ ይፈቅድ ዘንድ ታዘዘ።
+          </p>
+
+        </div><!-- /acc-item -->
+
+      </div><!-- /intro-body -->
+    </div><!-- /intro-box -->
+
+
+    <!-- ACCORDION CHAPTER PLACEHOLDER -->
+    <div class="accordion" id="qaleAwadiAccordion">
+      <!-- Chapters will go here -->
+    </div>
+
+  </div>
+</section>
+
+
+<section class="clergy-profile">
+  <div class="clergy-photo-wrapper">
+    <img 
+      src="/assets/images/Qalawadi01.jpg" 
+      alt="Qale Awadi Book"
+      class="clergy-photo"
+    >
+  </div>
+
+  <div class="clergy-info">
+    <h2 class="clergy-name">ቃለ አዋዲ</h2>
+    <p class="clergy-title">
+      የመጽሐፉ የእንግሊዝኛ ቅጂ በዲጂታል መጽሐፍት ቤት ክፍል ውስጥ ይገኛል።
+    </p>
+
+    <h2 class="clergy-name">Qale Awadi</h2>
+    <p class="clergy-title">
+      The English version of the book is available in the Digital Library section.
+    </p>
+  </div>
+</section>

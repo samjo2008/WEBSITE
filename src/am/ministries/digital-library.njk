@@ -1,0 +1,260 @@
+---
+title: "ዲጂታል መጽሐፍት ቤት"
+layout: "layouts/base.njk"
+lang: am
+permalink: "am/ministries/digital-library/index.html"
+---
+
+<section class="ministry-wrapper">
+  <div class="ministry-content library-content">
+
+    <h1>ዲጂታል መጽሐፍት ቤት</h1>
+
+    <p class="scripture">
+      “እንባ ለንባብ፣ ለማመንታት፣ ለትምህርት አድርጉ.”<br>
+      <span class="scripture-ref">— 1 ጢሞቴዎስ 4፥13</span>
+    </p>
+
+    <!-- Religion Books for Adults -->
+    <section>
+      <h2>📚 ለዕድሜ የደረሱ ሰዎች የመንፈሳዊ መጽሐፍት</h2>
+
+<div class="book-grid">
+  {% for b in collections.religionAdults %}
+    <article class="book">
+
+      <a class="book-cover" href="{{ b.url }}" target="_blank" rel="noopener">
+        {% set thumb = b.url | replace(".pdf", ".jpg") %}
+        <img src="{{ thumb }}"
+             alt="{{ b.name }} መጽሐፍ ንድፍ"
+             onerror="this.parentElement.classList.add('no-thumb'); this.remove();">
+        <span class="book-icon">📕</span>
+      </a>
+
+      <h3 class="book-title">{{ b.name }}</h3>
+      <p class="book-meta">PDF · {{ b.sizeMB }} MB</p>
+
+      <div class="book-actions">
+        <a class="btn view" href="{{ b.url }}" target="_blank" rel="noopener">ክፈት</a>
+        <a class="btn download" href="{{ b.url }}" download>አውርድ</a>
+      </div>
+
+    </article>
+  {% endfor %}
+
+  {% if collections.religionAdults | length == 0 %}
+    <p class="empty">መጽሐፍት ገና አልተጨመሩም።</p>
+  {% endif %}
+</div>
+
+    </section>
+
+    <!-- Prayer Books for Adults -->
+    <section>
+      <h2>🙏 ለዕድሜ የደረሱ ሰዎች የጸሎት መጽሐፍት</h2>
+
+<div class="book-grid">
+  {% for b in collections.prayerAdults %}
+    <article class="book">
+
+      <a class="book-cover" href="{{ b.url }}" target="_blank" rel="noopener">
+        {% set thumb = b.url | replace(".pdf", ".jpg") %}
+        <img src="{{ thumb }}"
+             alt="{{ b.name }} መጽሐፍ ንድፍ"
+             onerror="this.parentElement.classList.add('no-thumb'); this.remove();">
+        <span class="book-icon">📗</span>
+      </a>
+
+      <h3 class="book-title">{{ b.name }}</h3>
+      <p class="book-meta">PDF · {{ b.sizeMB }} MB</p>
+
+      <div class="book-actions">
+        <a class="btn view" href="{{ b.url }}" target="_blank" rel="noopener">ክፈት</a>
+        <a class="btn download" href="{{ b.url }}" download>አውርድ</a>
+      </div>
+
+    </article>
+  {% endfor %}
+
+  {% if collections.prayerAdults | length == 0 %}
+    <p class="empty">መጽሐፍት ገና አልተጨመሩም።</p>
+  {% endif %}
+</div>
+
+    </section>
+
+    <!-- Prayer Books for Children -->
+    <section>
+      <h2>🧒 ለህፃናት የጸሎት መጽሐፍት</h2>
+
+<div class="book-grid">
+  {% for b in collections.prayerChildren %}
+    <article class="book">
+
+      <a class="book-cover" href="{{ b.url }}" target="_blank" rel="noopener">
+        {% set thumb = b.url | replace(".pdf", ".jpg") %}
+        <img src="{{ thumb }}"
+             alt="{{ b.name }} መጽሐፍ ንድፍ"
+             onerror="this.parentElement.classList.add('no-thumb'); this.remove();">
+        <span class="book-icon">📘</span>
+      </a>
+
+      <h3 class="book-title">{{ b.name }}</h3>
+      <p class="book-meta">PDF · {{ b.sizeMB }} MB</p>
+<div class="book-actions">
+  <a class="btn view" href="{{ b.url }}" target="_blank" rel="noopener">ክፈት</a>
+  <a class="btn download" href="{{ b.url }}" download>አውርድ</a>
+</div>
+    </article>
+  {% endfor %}
+  {% if collections.prayerChildren | length == 0 %}
+    <p class="empty">መጽሐፍት ገና አልተጨመሩም።</p>
+  {% endif %}
+</div>
+    </section>
+  </div>
+</section>
+
+
+<style>
+/* Use your ministry layout + widen to 1500px as requested */
+.ministry-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #f5eee6;
+}
+.ministry-content.library-content {
+  max-width: 1500px;
+  width: 100%;
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Sections */
+.library-content section { margin-bottom: 2rem; }
+.library-content h2 { margin-bottom: .8rem; }
+
+/* Grid view */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* slightly wider to fit fixed thumb */
+  gap: 18px;
+  padding: 18px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
+.book {
+  background: #fafafa;
+  border-radius: 12px; /* match radius with thumb */
+  padding: 14px;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;     /* ensure overlay positioning works */
+  overflow: hidden;       /* prevent any image overflow from escaping the card */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+.book a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.book-icon { font-size: 1.8rem; }
+.book-title { text-align: center; margin: 0; font-weight: 700; color: #3a2a14; line-height: 1.35; }
+.book-meta { font-size: .85rem; color: #777; margin: 0; }
+.empty { color: #777; font-style: italic; }
+
+/* =========================
+   Thumbnail clamp (NEW)
+   ========================= */
+/* The clickable cover area */
+.book-cover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* FIXED THUMBNAIL SIZE — tweak to taste */
+  width: 160px;              /* desktop width */
+  height: 220px;             /* desktop height */
+  margin-left: auto;         /* center horizontally inside card */
+  margin-right: auto;
+
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  overflow: hidden;          /* crop anything larger than the box */
+  text-decoration: none;
+}
+
+/* Image should fit inside the box without spilling */
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* use 'cover' to fill with cropping */
+  display: block;
+}
+
+/* Fallback when thumbnail is missing (no-thumb added by onerror) */
+.book-cover.no-thumb {
+  background: linear-gradient(135deg, #fff, #f7f7f7);
+}
+.book-cover.no-thumb .book-icon {
+  font-size: 1.8rem;         /* scale icon to the thumb */
+  color: #b58a2c;
+}
+
+/* Actions at the bottom of the card */
+.book-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;          /* push actions to bottom for consistent height */
+}
+.btn {
+  display: inline-block;
+  padding: .55rem .8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: background .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+.btn.view {
+  background: #ffffff;
+  border: 1px solid rgba(201,162,77,0.45);
+  color: #7a4a2e;
+}
+.btn.view:hover {
+  background: #fff8e8;
+  box-shadow: 0 6px 14px rgba(201,162,77,0.25);
+}
+.btn.download {
+  background: #7a4a2e;
+  color: #fff;
+  border: 1px solid #7a4a2e;
+}
+.btn.download:hover {
+  background: #5e3822;
+}
+
+/* Mobile thumbnails slightly smaller */
+@media (max-width: 640px) {
+  .book-cover {
+    width: 130px;
+    height: 180px;
+  }
+}
+</style>

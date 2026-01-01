@@ -1,0 +1,197 @@
+---
+title: "ቅጾች"
+layout: "layouts/base.njk"
+permalink: "am/forms/index.html"
+lang: am
+---
+
+<div class="donations-page container">
+  <h1>ቅጾች</h1>
+
+  <p class="bible-verse">
+    “እያንዳንዱ ሰው በልቡ እንዳሰበ ይስጥ፥ ሳይከናወንም ወይም በግድ ሳይሆን፤
+    እግዚአብሔር ሐሤተኛን ሰጪ ይወዳል።”<br>
+    <strong>— 2 ቆሮንቶስ 9፥7</strong>
+  </p>
+
+  <!-- GRID OF FORM OPTIONS -->
+  <div class="donation-grid">
+
+    <!-- Choir / Deacon Signup -->
+    <a href="/am/forms/choir-deacon/" class="donation-card">
+      <div class="icon">💒</div>
+      <h3>ዘማሪ / ዲያቆን መመዝገብ</h3>
+      <p>ዘማሪ / ዲያቆን</p>
+    </a>
+
+    <!-- Feedback -->
+    <a href="/am/forms/feedback/" class="donation-card">
+      <div class="icon">💬</div>
+      <h3>አስተያየት</h3>
+      <p>አስተያየት መስጠት</p>
+    </a>
+
+    <!-- Baptism Registration -->
+    <a href="/am/forms/baptism/" class="donation-card">
+      <div class="icon">👶</div>
+      <h3>የጥምቀት መመዝገብ</h3>
+      <p>ጥምቀት</p>
+    </a>
+
+    <!-- Marriage -->
+    <a href="/am/forms/marriage/" class="donation-card">
+      <div class="icon">💍</div>
+      <h3>ጋብቻ</h3>
+      <p>የጋብቻ ቅጽ</p>
+    </a>
+
+    <!-- Full Memorial -->
+    <a href="/am/forms/full-memorial/" class="donation-card">
+      <div class="icon">🕯️</div>
+      <h3>ሙሉ ፍትሃት</h3>
+      <p>ሙሉ ፍትሃት</p>
+    </a>
+
+    <!-- Simple Memorial -->
+    <a href="/am/forms/simple-memorial/" class="donation-card">
+      <div class="icon">🌿</div>
+      <h3>ቀላል መታሰቢያ</h3>
+      <p>ስም ማስጠራት</p>
+    </a>
+
+    <!-- Membership Registration -->
+    <a href="/am/forms/membership-registration/" class="donation-card">
+      <div class="icon">🧾</div>
+      <h3>የአባልነት መመዝገብ</h3>
+      <p>አባልነት</p>
+    </a>
+
+    <!-- Sunday School Registration -->
+    <a href="/am/forms/sunday-school/" class="donation-card">
+      <div class="icon">🧾</div>
+      <h3>ሰንበት ት/ቤት መመዝገብ</h3>
+      <p>ሰንበት ት/ቤት</p>
+    </a>
+
+  </div>
+
+  <div class="footer-spacer" aria-hidden="true"></div>
+</div>
+
+
+
+<style>
+  /* Page container */
+  .forms-page,
+  .donations-page {              /* legacy alias, safe to keep during transition */
+    text-align: center;
+    padding: 2rem 0 5rem;
+  }
+
+  .bible-verse {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+
+  /* GRID LAYOUT */
+  .forms-grid,
+  .donation-grid {               /* legacy alias */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+  }
+
+  /* CARD STYLE */
+  .forms-card,
+  .forms-grid a,
+  .donation-card,                /* legacy alias */
+  .donation-grid a {             /* legacy alias for anchors inside old grid */
+    background: #3a2f2f;
+    color: #fff;                 /* enforce white text for visibility */
+    border-radius: 12px;
+    padding: 1.8rem 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.25s ease;
+    position: relative;
+  }
+
+  /* ICON */
+  .forms-card .icon,
+  .forms-grid a .icon,
+  .donation-card .icon {         /* legacy alias */
+    font-size: 2.6rem;
+    margin-bottom: 0.8rem;
+    color: #fff;                 /* make emoji/icon area consistent on dark bg */
+  }
+
+  /* TITLES & TEXT inside thumbnails — force white */
+  .forms-card h3,
+  .forms-card p,
+  .forms-grid a h3,
+  .forms-grid a p,
+  .donation-card h3,             /* legacy alias */
+  .donation-card p {             /* legacy alias */
+    color: #fff;                 /* white text for contrast */
+  }
+
+  .forms-card h3,
+  .forms-grid a h3,
+  .donation-card h3 {
+    margin: 0.4rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .forms-card p,
+  .forms-grid a p,
+  .donation-card p {
+    font-size: 0.95rem;
+    opacity: 0.95;               /* slightly stronger than 0.92 for readability */
+  }
+
+  /* HOVER EFFECT */
+  .forms-card:hover,
+  .forms-grid a:hover,
+  .donation-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
+
+  .forms-card:hover::after,
+  .forms-grid a:hover::after,
+  .donation-card:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+    pointer-events: none;
+  }
+
+  /* Spacer before footer */
+  .footer-spacer { height: 4rem; }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .forms-card,
+    .forms-grid a,
+    .donation-card {
+      padding: 1.2rem;
+    }
+    .forms-card .icon,
+    .forms-grid a .icon,
+    .donation-card .icon {
+      font-size: 2.2rem;
+    }
+  }
+</style>
+
